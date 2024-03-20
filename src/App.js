@@ -21,8 +21,10 @@ function App() {
       });
 
       
+      
 
-      function submitHandler(){
+      function submitHandler(event){
+        event.preventDefault();
         console.log(formData);
       }
 
@@ -38,9 +40,9 @@ function App() {
   return (
 
 
-    <div className="">
+    <div>
       <div className="mx-auto my-3 w-full md:max-w-[50%] p-8 shadow-sm  rounded-lg">
-      <form className='flex flex-col gap-2' onSubmit={submitHandler}>
+      <form className='flex flex-col gap-2'>
         
       <label htmlFor='firstName'>First Name</label>   
       <input type='text' placeholder='Abhishek' id='firstName'
@@ -157,7 +159,7 @@ function App() {
         </div>
       </div>
 
-      <button className="bg-blue-500 text-white h-8 w-16 font-medium text-lg rounded-lg">Save</button>
+      <button className="bg-blue-500 text-white h-8 w-16 font-medium text-lg rounded-lg" onClick={submitHandler}>Save</button>
       </form>
       </div>
     </div>
